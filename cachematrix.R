@@ -1,7 +1,8 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
+## MakeCacheMatrix is designed to produce a list of operations to perform on a given matrix. 
+## The output from this is a list of functions = c(getmatrix, setmatrix, getinverse, setinverse)
+## This allows us to call cacheSolve(list of functions).  
+## When we call this we will return the solution to the matrix that is stored in cache
+## If this has already been calculated, then the cache solution is returned
 
 makeCacheMatrix <- function(x = matrix()) {  #default is accepting the null matrix
         x_inv <- NULL #set matrix inverse to be null
@@ -38,5 +39,3 @@ cacheSolve <- function(matrix_functions, ...) {
         matrix_functions$setinverse(matrix_inv) #Stores the mean so that you don't need to calculate again.  The x is the makeVector list of functions you previously made
         matrix_inv
 }
-
-
